@@ -8,4 +8,5 @@ docker build -t deviateltd/teamcitybuildagent:latest  .
 docker push deviateltd/teamcitybuildagent
 
 ##Run
-docker run -v /var/run/docker.sock:/var/run/docker.sock -e TEAMCITY_SERVER=http://192.168.1.100:8111 -e TEAMCITY_BUILDAGENTNAME=Agent1 -dt -p 9090:9090 deviateltd/teamcitybuildagent
+docker run --privileged -v /var/run/docker.sock:/var/run/docker.sock -e TEAMCITY_SERVER=http://192.168.1.100:8111 -e TEAMCITY_BUILDAGENTNAME=Agent1 -dt -p 9090:9090 deviateltd/teamcitybuildagent
+

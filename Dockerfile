@@ -15,7 +15,12 @@ RUN apt-get update
 RUN apt-get -y install lxc-docker
 RUN apt-get -y install php5-mysql
 
+RUN apt-get -y install mono-complete
+RUN mozroots --import --sync
+
 ADD buildagentsetup.sh /tmp/buildagentsetup.sh
+ADD NuGet.exe /tmp/NuGet.exe
+ADD Microsoft.Build.dll /tmp/Microsoft.Build.dll
 ADD docker.config /etc/default/docker
 
 EXPOSE 9090
